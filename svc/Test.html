@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title bitch</title>
+<meta charset="UTF-8">
+</head>
+
+<body>
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+<script>
+	var ws = new WebSocket("ws://52.2.62.198:1337");	   
+	   
+	$( document ).ready(function() {	
+				
+	   ws.onopen = function()
+	   {
+		  // Web Socket is connected, send data using send()		  
+	   };
+		
+	   ws.onmessage = function (evt) 
+	   { 
+		  var returnObj = JSON.parse(evt.data);		  
+		  //do something with the data
+	   };
+		
+	   ws.onclose = function()
+	   { 
+		  // websocket is closed.
+	   };	   
+	});
+</script>
+Hello WorlD
+
+</body>
+     
+</html>
