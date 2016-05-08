@@ -76,8 +76,9 @@
                     <h1>Deep Focus</h1>
                     <h2>Keep Crushing it.</h2>
                     <hr>
-                    <h4 style="color: rgba(255, 255, 255, 0.75)">Total Messages: 38</h4>
-                    <h4 style="color: rgba(255, 255, 255, 0.75)"> Important Messages: 3 </h4>
+                    <!-- <h4 style="color: rgba(255, 255, 255, 0.75)">Total Messages: 38</h4> -->
+                    <h4 style="color: rgba(255, 255, 255, 0.75)"> Total Messages: <span id="messages-total"> 3 </span></h4>
+                    <h4 style="color: rgba(255, 255, 255, 0.75)"> Important Messages: <span id="messages-important"> 1 </span></h4>
                     <h5 style="color: rgba(255, 255, 255, 0.75)"> Last Updated: <span id="time-now">May 5th 8:19 pm </span></h5>
                     <a href="#summary" class="btn btn-primary btn-xl page-scroll">Summary</a>
                 </div>
@@ -93,79 +94,6 @@
                         <p class="dark">Here's the summary of who have contacted you</p>
                         
                         <div id="summary-items">
-                            <!-- <div class='row'>
-
-                                <div class='col-sm-4'>
-                                    <h4 class="dark" style="margin-bottom: 0px;"> Jeff Rothkirch </h4>
-                                    <img src="img/jeff.jpg" class="img-responsive img-thumbnail summary-thumbnail" alt="Cinque Terre">
-                                </div>
-
-                                <div class='col-sm-4'>
-                                    <div class='summary-chart'>
-                                        <h4>Summary </h4>
-                                        <canvas id="canvas-anonymous_1"></canvas>
-                                    </div>
-                                </div>
-
-                                <div class='col-sm-4' >
-                                    <h4> Contacts </h4>
-                                    <div class='summary-contacts'>
-                                        <p> Messages: 3 </p>
-                                        <p> Voicemail: 0 </p>
-                                        <p> Email: 0</p>
-                                    </div>
-                                </div>
-                            </div> -->
-
-                            <!-- <div class='row'>
-
-                                <div class='col-sm-4'>
-                                    <h4 class="dark" style="margin-bottom: 0px;"> Julia Hu </h4>
-                                    <img src="img/julia.jpg" class="img-responsive img-thumbnail summary-thumbnail" alt="Cinque Terre">
-                                </div>
-
-                                <div class='col-sm-4'>
-                                    <div class='summary-chart'>
-                                        <h4>Summary </h4>
-                                        <canvas id="canvas-julia"></canvas>
-                                    </div>
-                                </div>
-
-                                <div class='col-sm-4' >
-                                    <h4> Contacts </h4>
-                                    <div class='summary-contacts'>
-                                        <p> Messages: 3 </p>
-                                        <p> Voicemail: 1 </p>
-                                        <p> Email: 0</p>
-                                    </div>
-                                </div>
-                            </div> -->
-
-
-
-                            <!-- <div class='row'>
-
-                                <div class='col-sm-4'>
-                                    <h4 class="dark" style="margin-bottom: 0px;"> 631-293-1920 </h4>
-                                    <img src="img/anonymous/red03.png" class="img-responsive img-thumbnail summary-thumbnail" alt="Cinque Terre">
-                                </div>
-
-                                <div class='col-sm-4'>
-                                    <div class='summary-chart'>
-                                        <h4>Summary </h4>
-                                        <canvas id="canvas-anonymous_1"></canvas>
-                                    </div>
-                                </div>
-
-                                <div class='col-sm-4' >
-                                    <h4> Contacts </h4>
-                                    <div class='summary-contacts'>
-                                        <p> Messages: 3 </p>
-                                        <p> Voicemail: 1 </p>
-                                        <p> Email: 0</p>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                     <a href="#" class="btn btn-default btn-xl">Back to Home</a>
@@ -437,34 +365,34 @@
         var dataset = [{  
            "message_type":"sms",
            "time" : "5/8/2016 8:20 AM",
-           "message_text" : "Hello World",
-           "message_number" : "631-682-3553", // missing
+           "message_text" : "I bought a blue bike.",
+           "message_number" : "917-999-8417", // missing
            "message_tone":{   "document_tone":{  
               "tone_categories":[  
                  {  
                     "tones":[  
                        {  
-                          "score":0.25482,
+                          "score":0.12,
                           "tone_id":"anger",
                           "tone_name":"Anger"
                        },
                        {  
-                          "score":0.345816,
+                          "score":0.33,
                           "tone_id":"disgust",
                           "tone_name":"Disgust"
                        },
                        {  
-                          "score":0.121116,
+                          "score":0.28,
                           "tone_id":"fear",
                           "tone_name":"Fear"
                        },
                        {  
-                          "score":0.078903,
+                          "score":0.20,
                           "tone_id":"joy",
                           "tone_name":"Joy"
                        },
                        {  
-                          "score":0.199345,
+                          "score":0.28,
                           "tone_id":"sadness",
                           "tone_name":"Sadness"
                        }
@@ -527,229 +455,37 @@
               ]
            }
         }
-    },
-    {  
+    },{  
            "message_type":"sms",
-           "time" : "5/8/2016 9:30 AM",
-           "message_text" : "Do you want to build a snowman?",
-           "message_number" : "631-682-3553", // missing
+           "time" : "5/8/2016 10:20 AM",
+           "message_text" : "I bought some apples at the grocery store.",
+           "message_number" : "917-999-8417", // missing
            "message_tone":{   "document_tone":{  
               "tone_categories":[  
                  {  
                     "tones":[  
                        {  
-                          "score":0.000,
+                          "score":0.09,
                           "tone_id":"anger",
                           "tone_name":"Anger"
                        },
                        {  
-                          "score":0.345816,
+                          "score":0.34,
                           "tone_id":"disgust",
                           "tone_name":"Disgust"
                        },
                        {  
-                          "score":0.121116,
+                          "score":0.10,
                           "tone_id":"fear",
                           "tone_name":"Fear"
                        },
                        {  
-                          "score":0.078903,
+                          "score":0.32,
                           "tone_id":"joy",
                           "tone_name":"Joy"
                        },
                        {  
-                          "score":0.199345,
-                          "tone_id":"sadness",
-                          "tone_name":"Sadness"
-                       }
-                    ],
-                    "category_id":"emotion_tone",
-                    "category_name":"Emotion Tone"
-                 },
-                 {  
-                    "tones":[  
-                       {  
-                          "score":0.999,
-                          "tone_id":"analytical",
-                          "tone_name":"Analytical"
-                       },
-                       {  
-                          "score":0.999,
-                          "tone_id":"confident",
-                          "tone_name":"Confident"
-                       },
-                       {  
-                          "score":0.694,
-                          "tone_id":"tentative",
-                          "tone_name":"Tentative"
-                       }
-                    ],
-                    "category_id":"writing_tone",
-                    "category_name":"Writing Tone"
-                 },
-                 {  
-                    "tones":[  
-                       {  
-                          "score":0.271,
-                          "tone_id":"openness_big5",
-                          "tone_name":"Openness"
-                       },
-                       {  
-                          "score":0.11,
-                          "tone_id":"conscientiousness_big5",
-                          "tone_name":"Conscientiousness"
-                       },
-                       {  
-                          "score":0.844,
-                          "tone_id":"extraversion_big5",
-                          "tone_name":"Extraversion"
-                       },
-                       {  
-                          "score":0.257,
-                          "tone_id":"agreeableness_big5",
-                          "tone_name":"Agreeableness"
-                       },
-                       {  
-                          "score":0.497,
-                          "tone_id":"neuroticism_big5",
-                          "tone_name":"Emotional Range"
-                       }
-                    ],
-                    "category_id":"social_tone",
-                    "category_name":"Social Tone"
-                 }
-              ]
-           }
-        }
-    },
-    {  
-           "message_type":"sms",
-           "message_number" : "917-999-8417", // missing
-            "time" : "5/8/2016 1:20 PM",
-           "message_text" : "I got the reservation at Morgans again.",
-           "message_tone":{"document_tone":{  
-              "tone_categories":[  
-                 {  
-                    "tones":[  
-                       {  
-                          "score":0.25482,
-                          "tone_id":"anger",
-                          "tone_name":"Anger"
-                       },
-                       {  
-                          "score":0.345816,
-                          "tone_id":"disgust",
-                          "tone_name":"Disgust"
-                       },
-                       {  
-                          "score":0.121116,
-                          "tone_id":"fear",
-                          "tone_name":"Fear"
-                       },
-                       {  
-                          "score":0.078903,
-                          "tone_id":"joy",
-                          "tone_name":"Joy"
-                       },
-                       {  
-                          "score":0.199345,
-                          "tone_id":"sadness",
-                          "tone_name":"Sadness"
-                       }
-                    ],
-                    "category_id":"emotion_tone",
-                    "category_name":"Emotion Tone"
-                 },
-                 {  
-                    "tones":[  
-                       {  
-                          "score":0.999,
-                          "tone_id":"analytical",
-                          "tone_name":"Analytical"
-                       },
-                       {  
-                          "score":0.999,
-                          "tone_id":"confident",
-                          "tone_name":"Confident"
-                       },
-                       {  
-                          "score":0.694,
-                          "tone_id":"tentative",
-                          "tone_name":"Tentative"
-                       }
-                    ],
-                    "category_id":"writing_tone",
-                    "category_name":"Writing Tone"
-                 },
-                 {  
-                    "tones":[  
-                       {  
-                          "score":0.271,
-                          "tone_id":"openness_big5",
-                          "tone_name":"Openness"
-                       },
-                       {  
-                          "score":0.11,
-                          "tone_id":"conscientiousness_big5",
-                          "tone_name":"Conscientiousness"
-                       },
-                       {  
-                          "score":0.844,
-                          "tone_id":"extraversion_big5",
-                          "tone_name":"Extraversion"
-                       },
-                       {  
-                          "score":0.257,
-                          "tone_id":"agreeableness_big5",
-                          "tone_name":"Agreeableness"
-                       },
-                       {  
-                          "score":0.497,
-                          "tone_id":"neuroticism_big5",
-                          "tone_name":"Emotional Range"
-                       }
-                    ],
-                    "category_id":"social_tone",
-                    "category_name":"Social Tone"
-                 }
-              ]
-           }
-        }
-    }, 
-
-     {  
-
-           "message_type":"sms",
-           "message_number" : "917-999-8417", // missing
-            "time" : "5/8/2016 3:30 PM",
-           "message_text" : "I lost my wallet",
-           "message_number" : "291-923-1207", // missing
-           "message_tone":{"document_tone":{  
-              "tone_categories":[  
-                 {  
-                    "tones":[  
-                       {  
-                          "score":0.25482,
-                          "tone_id":"anger",
-                          "tone_name":"Anger"
-                       },
-                       {  
-                          "score":0.345816,
-                          "tone_id":"disgust",
-                          "tone_name":"Disgust"
-                       },
-                       {  
-                          "score":0.121116,
-                          "tone_id":"fear",
-                          "tone_name":"Fear"
-                       },
-                       {  
-                          "score":0.078903,
-                          "tone_id":"joy",
-                          "tone_name":"Joy"
-                       },
-                       {  
-                          "score":0.199345,
+                          "score":0.19,
                           "tone_id":"sadness",
                           "tone_name":"Sadness"
                        }
@@ -813,6 +549,291 @@
            }
         }
     }
+    // {  
+    //        "message_type":"sms",
+    //        "time" : "5/8/2016 9:30 AM",
+    //        "message_text" : "Do you want to build a snowman?",
+    //        "message_number" : "631-682-3553", // missing
+    //        "message_tone":{   "document_tone":{  
+    //           "tone_categories":[  
+    //              {  
+    //                 "tones":[  
+    //                    {  
+    //                       "score":0.000,
+    //                       "tone_id":"anger",
+    //                       "tone_name":"Anger"
+    //                    },
+    //                    {  
+    //                       "score":0.345816,
+    //                       "tone_id":"disgust",
+    //                       "tone_name":"Disgust"
+    //                    },
+    //                    {  
+    //                       "score":0.121116,
+    //                       "tone_id":"fear",
+    //                       "tone_name":"Fear"
+    //                    },
+    //                    {  
+    //                       "score":0.078903,
+    //                       "tone_id":"joy",
+    //                       "tone_name":"Joy"
+    //                    },
+    //                    {  
+    //                       "score":0.199345,
+    //                       "tone_id":"sadness",
+    //                       "tone_name":"Sadness"
+    //                    }
+    //                 ],
+    //                 "category_id":"emotion_tone",
+    //                 "category_name":"Emotion Tone"
+    //              },
+    //              {  
+    //                 "tones":[  
+    //                    {  
+    //                       "score":0.999,
+    //                       "tone_id":"analytical",
+    //                       "tone_name":"Analytical"
+    //                    },
+    //                    {  
+    //                       "score":0.999,
+    //                       "tone_id":"confident",
+    //                       "tone_name":"Confident"
+    //                    },
+    //                    {  
+    //                       "score":0.694,
+    //                       "tone_id":"tentative",
+    //                       "tone_name":"Tentative"
+    //                    }
+    //                 ],
+    //                 "category_id":"writing_tone",
+    //                 "category_name":"Writing Tone"
+    //              },
+    //              {  
+    //                 "tones":[  
+    //                    {  
+    //                       "score":0.271,
+    //                       "tone_id":"openness_big5",
+    //                       "tone_name":"Openness"
+    //                    },
+    //                    {  
+    //                       "score":0.11,
+    //                       "tone_id":"conscientiousness_big5",
+    //                       "tone_name":"Conscientiousness"
+    //                    },
+    //                    {  
+    //                       "score":0.844,
+    //                       "tone_id":"extraversion_big5",
+    //                       "tone_name":"Extraversion"
+    //                    },
+    //                    {  
+    //                       "score":0.257,
+    //                       "tone_id":"agreeableness_big5",
+    //                       "tone_name":"Agreeableness"
+    //                    },
+    //                    {  
+    //                       "score":0.497,
+    //                       "tone_id":"neuroticism_big5",
+    //                       "tone_name":"Emotional Range"
+    //                    }
+    //                 ],
+    //                 "category_id":"social_tone",
+    //                 "category_name":"Social Tone"
+    //              }
+    //           ]
+    //        }
+    //     }
+    // },
+    // {  
+    //        "message_type":"sms",
+    //        "message_number" : "917-999-8417", // missing
+    //         "time" : "5/8/2016 1:20 PM",
+    //        "message_text" : "I got the reservation at Morgans again.",
+    //        "message_tone":{"document_tone":{  
+    //           "tone_categories":[  
+    //              {  
+    //                 "tones":[  
+    //                    {  
+    //                       "score":0.25482,
+    //                       "tone_id":"anger",
+    //                       "tone_name":"Anger"
+    //                    },
+    //                    {  
+    //                       "score":0.345816,
+    //                       "tone_id":"disgust",
+    //                       "tone_name":"Disgust"
+    //                    },
+    //                    {  
+    //                       "score":0.121116,
+    //                       "tone_id":"fear",
+    //                       "tone_name":"Fear"
+    //                    },
+    //                    {  
+    //                       "score":0.078903,
+    //                       "tone_id":"joy",
+    //                       "tone_name":"Joy"
+    //                    },
+    //                    {  
+    //                       "score":0.199345,
+    //                       "tone_id":"sadness",
+    //                       "tone_name":"Sadness"
+    //                    }
+    //                 ],
+    //                 "category_id":"emotion_tone",
+    //                 "category_name":"Emotion Tone"
+    //              },
+    //              {  
+    //                 "tones":[  
+    //                    {  
+    //                       "score":0.999,
+    //                       "tone_id":"analytical",
+    //                       "tone_name":"Analytical"
+    //                    },
+    //                    {  
+    //                       "score":0.999,
+    //                       "tone_id":"confident",
+    //                       "tone_name":"Confident"
+    //                    },
+    //                    {  
+    //                       "score":0.694,
+    //                       "tone_id":"tentative",
+    //                       "tone_name":"Tentative"
+    //                    }
+    //                 ],
+    //                 "category_id":"writing_tone",
+    //                 "category_name":"Writing Tone"
+    //              },
+    //              {  
+    //                 "tones":[  
+    //                    {  
+    //                       "score":0.271,
+    //                       "tone_id":"openness_big5",
+    //                       "tone_name":"Openness"
+    //                    },
+    //                    {  
+    //                       "score":0.11,
+    //                       "tone_id":"conscientiousness_big5",
+    //                       "tone_name":"Conscientiousness"
+    //                    },
+    //                    {  
+    //                       "score":0.844,
+    //                       "tone_id":"extraversion_big5",
+    //                       "tone_name":"Extraversion"
+    //                    },
+    //                    {  
+    //                       "score":0.257,
+    //                       "tone_id":"agreeableness_big5",
+    //                       "tone_name":"Agreeableness"
+    //                    },
+    //                    {  
+    //                       "score":0.497,
+    //                       "tone_id":"neuroticism_big5",
+    //                       "tone_name":"Emotional Range"
+    //                    }
+    //                 ],
+    //                 "category_id":"social_tone",
+    //                 "category_name":"Social Tone"
+    //              }
+    //           ]
+    //        }
+    //     }
+    // }, 
+
+    //  {  
+
+    //        "message_type":"sms",
+    //        "message_number" : "917-999-8417", // missing
+    //         "time" : "5/8/2016 3:30 PM",
+    //        "message_text" : "I lost my wallet",
+    //        "message_number" : "291-923-1207", // missing
+    //        "message_tone":{"document_tone":{  
+    //           "tone_categories":[  
+    //              {  
+    //                 "tones":[  
+    //                    {  
+    //                       "score":0.25482,
+    //                       "tone_id":"anger",
+    //                       "tone_name":"Anger"
+    //                    },
+    //                    {  
+    //                       "score":0.345816,
+    //                       "tone_id":"disgust",
+    //                       "tone_name":"Disgust"
+    //                    },
+    //                    {  
+    //                       "score":0.121116,
+    //                       "tone_id":"fear",
+    //                       "tone_name":"Fear"
+    //                    },
+    //                    {  
+    //                       "score":0.078903,
+    //                       "tone_id":"joy",
+    //                       "tone_name":"Joy"
+    //                    },
+    //                    {  
+    //                       "score":0.199345,
+    //                       "tone_id":"sadness",
+    //                       "tone_name":"Sadness"
+    //                    }
+    //                 ],
+    //                 "category_id":"emotion_tone",
+    //                 "category_name":"Emotion Tone"
+    //              },
+    //              {  
+    //                 "tones":[  
+    //                    {  
+    //                       "score":0.999,
+    //                       "tone_id":"analytical",
+    //                       "tone_name":"Analytical"
+    //                    },
+    //                    {  
+    //                       "score":0.999,
+    //                       "tone_id":"confident",
+    //                       "tone_name":"Confident"
+    //                    },
+    //                    {  
+    //                       "score":0.694,
+    //                       "tone_id":"tentative",
+    //                       "tone_name":"Tentative"
+    //                    }
+    //                 ],
+    //                 "category_id":"writing_tone",
+    //                 "category_name":"Writing Tone"
+    //              },
+    //              {  
+    //                 "tones":[  
+    //                    {  
+    //                       "score":0.271,
+    //                       "tone_id":"openness_big5",
+    //                       "tone_name":"Openness"
+    //                    },
+    //                    {  
+    //                       "score":0.11,
+    //                       "tone_id":"conscientiousness_big5",
+    //                       "tone_name":"Conscientiousness"
+    //                    },
+    //                    {  
+    //                       "score":0.844,
+    //                       "tone_id":"extraversion_big5",
+    //                       "tone_name":"Extraversion"
+    //                    },
+    //                    {  
+    //                       "score":0.257,
+    //                       "tone_id":"agreeableness_big5",
+    //                       "tone_name":"Agreeableness"
+    //                    },
+    //                    {  
+    //                       "score":0.497,
+    //                       "tone_id":"neuroticism_big5",
+    //                       "tone_name":"Emotional Range"
+    //                    }
+    //                 ],
+    //                 "category_id":"social_tone",
+    //                 "category_name":"Social Tone"
+    //              }
+    //           ]
+    //        }
+    //     }
+    // }
 
 
     ]
@@ -857,10 +878,10 @@
             var obj = 
             {   
                 "message_number" : data['message_number'],
-                "message" : data["message_text"],
+                "message_text" : data["message_text"],
                 "time" : data['time'],
                 "message_type" : data["message_type"],
-                "message_tone" : data["message_tone"],
+                "message_tone" : data["message_tone"] || data["message_tones"],
             }
 
             if (!cache[id]) {
@@ -897,8 +918,10 @@
                                     <h4> Contacts </h4>\
                                     <div class='summary-contacts'>\
                                         <p> Messages: {3} </p>\
+                                        <p id='{2}-deflected'></p> \
+                                        <p id='{2}-important'></p>\
                                     </div>\
-                                </div>".format(image_url, name, id,cache[id].length)
+                                </div>".format(image_url, name, data['message_number'], cache[id].length)
             return node;
         }
 
@@ -911,6 +934,9 @@
                 clear_summaries();
                 draw_summaries();
                 set_latest_time();
+                set_total_messages();
+                set_important_messages();
+                set_summary_text_messages();
             };
 
             var draw_summaries = function() {
@@ -944,6 +970,8 @@
                 // message_number, image location, summary infomation
                 var dataset = cache[id];
                 var converted = digest_data(dataset);
+                // var converted = [dataset[dataset.length-1]];
+
                 new Chart(document.getElementById(id), 
                     generate_radar(converted['anger'], converted['disgust'], converted['fear'], converted['joy'], converted['sadness']));
             }
@@ -961,7 +989,7 @@
                     var data = dataset[i];
 
                     if (!data["message_tone"]["document_tone"])
-                        var emotions = JSON.parse(data["message_tone"])["document_tone"]["tone_categories"][0]["tones"];
+                        var emotions = data["message_tone"]["tone_categories"][0]["tones"];
                     else
                         var emotions = data["message_tone"]["document_tone"]["tone_categories"][0]["tones"];
 
@@ -973,11 +1001,11 @@
                 }
 
                 var ans = {
-                    anger  :  analysis['anger'].mean(),
-                    disgust  : analysis['disgust'].mean(),
-                    fear  : analysis['fear'].mean(),
-                    joy  : analysis['joy'].mean(),
-                    sadness  : analysis['sadness'].mean(),
+                    anger  :  analysis['anger'][analysis['anger'].length-1],
+                    disgust  : analysis['disgust'][analysis['disgust'].length-1],
+                    fear  : analysis['fear'][analysis['fear'].length-1],
+                    joy  : analysis['joy'][analysis['joy'].length-1],
+                    sadness  : analysis['sadness'][analysis['sadness'].length-1],
                 };
 
                 return ans;
@@ -1033,10 +1061,138 @@
                 node.innerText = time_s;
             }
 
+            var set_total_messages = function() {
+                if (cache.length == 0)
+                    return null;
+
+                var keys = Object.keys(cache);
+                var count = 0;
+
+                for (var i=0; i < keys.length; i++){
+                    var key = keys[i];
+                    var messages = cache[key];
+
+                    count += messages.length;
+                }
+
+                var node = document.getElementById("messages-total");
+                node.innerText = count;
+            }
+
+            var set_important_messages = function() {
+                var messages = [];
+                var keys = Object.keys(cache);
+
+                for (var i=0; i < keys.length; i++){
+                    messages = messages.concat(cache[keys[i]]);
+                }
+
+                var important = getImportantMessages(messages)
+                var number = important.length;
+
+                var node = document.getElementById("messages-important");
+                node.innerText = number;
+                
+                document.title = "Deep Focus (" + number + ")";
+            }
+
+            var set_summary_text_messages = function() {
+                var keys = Object.keys(cache);
+
+                for (var i=0; i < keys.length; i++) {
+                    var key = keys[i];
+
+                    var important = getLastImportantMessageForId(cache[key]);
+                    var unimportant = getLastUnimportantMessageForId(cache[key]);
+
+                    if (important) {
+                        var node = document.getElementById(key+"-important")
+                        node.innerText = "Important: " + important['message_text']
+                        console.log("setting important thing for " + important['message_text'] + " " + key+"-important"); 
+                    } else {
+                        var node = document.getElementById(key+"-important")
+                        node.innerText = ""
+                        console.log("not important clearning")
+                    }
+
+                    if (unimportant) {
+                        var node = document.getElementById(key+"-deflected")
+                        node.innerText = "Unimportant: " + unimportant['message_text']
+                    } else {
+                        var node = document.getElementById(key+"-deflected")
+                        node.innerText = ""
+                    }
+
+                }
+            }
+
+            var getImportantMessages = function(messages) {
+                var important = [];
+
+                for (var i=0; i < messages.length; i++) {
+                    var tonalValues = [];
+                    var data = messages[i];
+
+                    if (!data["message_tone"]["document_tone"])
+                        var emotions = data["message_tone"]["tone_categories"][0]["tones"];
+                    else
+                        var emotions = data["message_tone"]["document_tone"]["tone_categories"][0]["tones"];
+
+                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "anger"; })[0]['score']);
+                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "disgust"; })[0]['score']);
+                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "fear"; })[0]['score']);
+                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "joy"; })[0]['score']);
+                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "sadness"; })[0]['score']);
+
+                    console.log("Tonal Values for:" + data["message_text"])
+                    console.log(JSON.stringify(tonalValues))
+                    if (tonalValues.max() > 0.55 || data['message_text'].indexOf("?") > -1)
+                        important.push(data);
+                }
+
+                return important;
+            }
+
+            var getUnimportantMessages = function(messages) {
+                var unimportant = [];
+
+                for (var i=0; i < messages.length; i++) {
+                    var tonalValues = [];
+                    var data = messages[i];
+
+                    if (!data["message_tone"]["document_tone"])
+                        var emotions = data["message_tone"]["tone_categories"][0]["tones"];
+                    else
+                        var emotions = data["message_tone"]["document_tone"]["tone_categories"][0]["tones"];
+
+                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "anger"; })[0]['score']);
+                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "disgust"; })[0]['score']);
+                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "fear"; })[0]['score']);
+                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "joy"; })[0]['score']);
+                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "sadness"; })[0]['score']);
+                    if (tonalValues.max() < 0.55 && data['message_text'].indexOf("?") == -1)
+                        unimportant.push(data);
+
+                }
+
+                return unimportant;
+            }
+
+            var getLastImportantMessageForId = function(messages) {
+                var important_ones = getImportantMessages(messages);
+                if (important_ones.length == 0)
+                    return null
+                return important_ones[important_ones.length-1];
+            }
+
+            var getLastUnimportantMessageForId = function(messages) {
+                var unimportant_ones = getUnimportantMessages(messages);
+                if (unimportant_ones.length == 0)
+                    return null
+                return unimportant_ones[unimportant_ones.length-1];
+            }
+
             var generate_radar = function(anger, disgust, fear, joy, sadness) {
-                // var anger = 
-
-
                 var config = {
                     type: 'radar',
                     data: {
@@ -1045,7 +1201,11 @@
                             backgroundColor: "rgba(0,0,0,0.4)",
                             pointBackgroundColor: "rgba(0,0,0,1)",
                             data: [anger, disgust, fear, joy, sadness]
-                        }]
+                            },{
+                            backgroundColor: "rgba(0,0,0,0.0)",
+                            pointBackgroundColor: "rgba(0,0,0,0)",
+                            data: [1, 1, 1, 1, 1]
+                            }]
                     },
                     options: {
                         title: {
@@ -1081,13 +1241,17 @@
 
       ws.onmessage = function (evt) 
       { 
-          var data = JSON.parse(evt.data);
+           console.log("New incoming data");
+           var data = JSON.parse(evt.data);
+           console.log(data);
            var id = get_element_id(data['message_number']);
-           var isNew = !cache[id];
            update_global_cache(data);
            clear_summaries();
            draw_summaries();
            set_latest_time();
+           set_total_messages();
+           set_important_messages();
+           set_summary_text_messages();
           //do something with the data
       };
 
@@ -1103,24 +1267,6 @@
         }
 
     </script>
-
-<script>
-function startTime() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    var s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-    document.getElementById('now').innerHTML =
-    h + ":" + m + ":" + s;
-    var t = setTimeout(startTime, 500);
-}
-function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-    return i;
-}
-</script>
 
 </body>
 
