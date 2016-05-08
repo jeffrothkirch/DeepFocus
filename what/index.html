@@ -970,10 +970,11 @@
                 // message_number, image location, summary infomation
                 var dataset = cache[id];
                 var converted = digest_data(dataset);
+                var mean = mean_data(dataset);
                 // var converted = [dataset[dataset.length-1]];
 
                 new Chart(document.getElementById(id), 
-                    generate_radar(converted['anger'], converted['disgust'], converted['fear'], converted['joy'], converted['sadness']));
+                    generate_radar(converted['anger'], converted['disgust'], converted['fear'], converted['joy'], converted['sadness'], converted['strength'], mean));
             }
 
             var digest_data = function(dataset) {
@@ -982,7 +983,8 @@
                     disgust : [],
                     fear : [],
                     joy : [],
-                    sadness : []
+                    sadness : [],
+                    strength: []
                 }
 
                 for (var i=0; i< dataset.length; i++){
@@ -993,11 +995,17 @@
                     else
                         var emotions = data["message_tone"]["document_tone"]["tone_categories"][0]["tones"];
 
+                    if (!data["message_tone"]["document_tone"])
+                        var strength = data["message_tone"]["tone_categories"][2]["tones"];
+                    else
+                        var strength = data["message_tone"]["document_tone"]["tone_categories"][2]["tones"];
+
                     analysis['anger'].push($.grep(emotions, function(e){ return e.tone_id == "anger"; })[0]['score']);
                     analysis['disgust'].push($.grep(emotions, function(e){ return e.tone_id == "disgust"; })[0]['score']);
                     analysis['fear'].push($.grep(emotions, function(e){ return e.tone_id == "fear"; })[0]['score']);
                     analysis['joy'].push($.grep(emotions, function(e){ return e.tone_id == "joy"; })[0]['score']);
                     analysis['sadness'].push($.grep(emotions, function(e){ return e.tone_id == "sadness"; })[0]['score']);
+                    analysis['strength'].push(strength[4]['score']);
                 }
 
                 var ans = {
@@ -1006,6 +1014,51 @@
                     fear  : analysis['fear'][analysis['fear'].length-1],
                     joy  : analysis['joy'][analysis['joy'].length-1],
                     sadness  : analysis['sadness'][analysis['sadness'].length-1],
+                    strength : analysis['strength'][analysis['strength'].length-1],
+                };
+
+                return ans;
+            }
+
+            var mean_data = function(dataset) {
+                var analysis = {
+                    anger : [],
+                    disgust : [],
+                    fear : [],
+                    joy : [],
+                    sadness : [],
+                    strength: []
+                }
+
+                for (var i=0; i< dataset.length; i++){
+                    var data = dataset[i];
+
+                    if (!data["message_tone"]["document_tone"])
+                        var emotions = data["message_tone"]["tone_categories"][0]["tones"];
+                    else
+                        var emotions = data["message_tone"]["document_tone"]["tone_categories"][0]["tones"];
+
+
+                    if (!data["message_tone"]["document_tone"])
+                        var strength = data["message_tone"]["tone_categories"][2]["tones"];
+                    else
+                        var strength = data["message_tone"]["document_tone"]["tone_categories"][2]["tones"];
+
+                    analysis['anger'].push($.grep(emotions, function(e){ return e.tone_id == "anger"; })[0]['score']);
+                    analysis['disgust'].push($.grep(emotions, function(e){ return e.tone_id == "disgust"; })[0]['score']);
+                    analysis['fear'].push($.grep(emotions, function(e){ return e.tone_id == "fear"; })[0]['score']);
+                    analysis['joy'].push($.grep(emotions, function(e){ return e.tone_id == "joy"; })[0]['score']);
+                    analysis['sadness'].push($.grep(emotions, function(e){ return e.tone_id == "sadness"; })[0]['score']);
+                    analysis['strength'].push(strength[4]['score']);
+                }
+
+                var ans = {
+                    anger  :  analysis['anger'].mean(),
+                    disgust  : analysis['disgust'].mean(),
+                    fear  : analysis['fear'].mean(),
+                    joy  : analysis['joy'].mean(),
+                    sadness  : analysis['sadness'].mean(),
+                    strength : analysis['strength'].mean(),
                 };
 
                 return ans;
@@ -1134,19 +1187,15 @@
                     var data = messages[i];
 
                     if (!data["message_tone"]["document_tone"])
-                        var emotions = data["message_tone"]["tone_categories"][0]["tones"];
+                        var emotions = data["message_tone"]["tone_categories"][2]["tones"];
                     else
-                        var emotions = data["message_tone"]["document_tone"]["tone_categories"][0]["tones"];
+                        var emotions = data["message_tone"]["document_tone"]["tone_categories"][2]["tones"];
 
-                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "anger"; })[0]['score']);
-                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "disgust"; })[0]['score']);
-                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "fear"; })[0]['score']);
-                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "joy"; })[0]['score']);
-                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "sadness"; })[0]['score']);
+                    tonalValues.push(emotions[4]['score'])
 
                     console.log("Tonal Values for:" + data["message_text"])
                     console.log(JSON.stringify(tonalValues))
-                    if (tonalValues.max() > 0.55 || data['message_text'].indexOf("?") > -1)
+                    if (tonalValues.max() > 0.90)
                         important.push(data);
                 }
 
@@ -1160,17 +1209,17 @@
                     var tonalValues = [];
                     var data = messages[i];
 
-                    if (!data["message_tone"]["document_tone"])
-                        var emotions = data["message_tone"]["tone_categories"][0]["tones"];
-                    else
-                        var emotions = data["message_tone"]["document_tone"]["tone_categories"][0]["tones"];
 
-                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "anger"; })[0]['score']);
-                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "disgust"; })[0]['score']);
-                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "fear"; })[0]['score']);
-                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "joy"; })[0]['score']);
-                    tonalValues.push($.grep(emotions, function(e){ return e.tone_id == "sadness"; })[0]['score']);
-                    if (tonalValues.max() < 0.55 && data['message_text'].indexOf("?") == -1)
+                    if (!data["message_tone"]["document_tone"])
+                        var emotions = data["message_tone"]["tone_categories"][2]["tones"];
+                    else
+                        var emotions = data["message_tone"]["document_tone"]["tone_categories"][2]["tones"];
+
+                    tonalValues.push(emotions[4]['score'])
+
+                    console.log("Tonal Values for:" + data["message_text"])
+                    console.log(JSON.stringify(tonalValues))
+                    if (tonalValues.max() <= 0.90)
                         unimportant.push(data);
 
                 }
@@ -1192,19 +1241,25 @@
                 return unimportant_ones[unimportant_ones.length-1];
             }
 
-            var generate_radar = function(anger, disgust, fear, joy, sadness) {
+            var generate_radar = function(anger, disgust, fear, joy, sadness, strength, summary) {
                 var config = {
                     type: 'radar',
                     data: {
-                        labels: ["Anger", "Disgust", "Fear", "Joy", "Sadness"],
+                        labels: ["Emotion", "Anger", "Disgust", "Fear", "Joy", "Sadness"],
                         datasets: [{
                             backgroundColor: "rgba(0,0,0,0.4)",
                             pointBackgroundColor: "rgba(0,0,0,1)",
-                            data: [anger, disgust, fear, joy, sadness]
-                            },{
+                            data: [strength, anger, disgust, fear, joy, sadness]
+                            },
+                            {
+                            backgroundColor: "rgba(255,184,135,0.4)",
+                            pointBackgroundColor: "rgba(0,0,0,1)",
+                            data: [summary['strength'], summary['anger'], summary['disgust'], summary['fear'], summary['joy'], summary['sadness']]
+                            },
+                            {
                             backgroundColor: "rgba(0,0,0,0.0)",
                             pointBackgroundColor: "rgba(0,0,0,0)",
-                            data: [1, 1, 1, 1, 1]
+                            data: [1, 1, 1, 1, 1, 1]
                             }]
                     },
                     options: {
