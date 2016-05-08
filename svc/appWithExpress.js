@@ -1,5 +1,7 @@
 "use strict";
 
+var request = require('request');
+
 var history = [ ];
 var clients = [ ];
 
@@ -18,19 +20,86 @@ app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 
+
+function formatPhone(phoneNumber) {
+    var numbers = phoneNumber.replace(/\D/g, ''),
+        char = {0:'',3:'-',6:'-'};
+    phoneNumber = '';
+    for (var i = 0; i < numbers.length; i++) {
+        phoneNumber += (char[i]||'') + numbers[i];
+    }
+
+    return phoneNumber;
+}
+
 app.post('/NewMessage', function(req,res) {
     console.log('getting the post');
     console.log('response = ' + req.body);
-    for (var i=0; i < clients.length; i++) {
+  //  for (var i=0; i < clients.length; i++) {
         // debugger;
          console.log('int the loop1');
          console.log('number of clients = ' + clients.length);
-         console.log('test = ' + req.body.test);
-         //clients[i].sendUTF(req.body.test);
-         var messageToSend = JSON.stringify(req.body);
-         clients[i].sendUTF(messageToSend);
-         console.log('int the loop2');
-    }
+         var originalMessage = req.body;
+         var fromPhone = originalMessage.message_number;
+         console.log('from phone = ' + fromPhone);
+         var newPhone = formatPhone(fromPhone);
+         console.log('new phone = ' + newPhone);
+         originalMessage.message_number = newPhone;
+ 
+         var dateNow = new Date();
+         var dateTime = dateNow.toLocaleDateString() + ' ' + dateNow.toLocaleTimeString();
+         originalMessage.time = dateTime;
+
+         //send to IBM son
+         // Set the headers
+         var user = 'c6940862-7018-4f9d-bfaf-995408476d91';
+         var pass = 'zifxFcSTnwHH';
+         var auth = new Buffer(user + ':' + pass).toString('base64');
+
+         var headers = {
+             'Content-Type':     'application/json',
+             'Authorization': 'Basic ' + auth
+         }
+
+         // Configure the request
+         var options = {
+            url: 'https://gateway.watsonplatform.net/tone-analyzer-beta/api/v3/tone?version=2016-02-11',
+            method: 'POST',
+            headers: headers,
+            json: { "text": originalMessage.message_text }
+         }
+
+         // Start the request
+         request(options, function (error, response, body) {
+            if (response.statusCode == 200) {
+                console.log('IBM Watson replied ok');
+                //console.log(response.body.document_tone);
+                debugger;
+
+                 originalMessage.message_tones = response.body.document_tone;
+                 console.log(originalMessage.message_tones);
+                 var messageToSend = JSON.stringify(originalMessage);
+                 messageToSend = messageToSend.replace(/=>/g,':');
+                 history.push(messageToSend);
+
+                 for (var i=0; i < clients.length; i++) {
+                     clients[i].sendUTF(messageToSend);
+                 }
+            }
+
+            if (response.statusCode != 200){
+                console.log(response);
+            }
+         })
+
+         //var messageToSend = JSON.stringify(originalMessage);
+         //messageToSend = messageToSend.replace(/=>/g,':');
+         //history.push(messageToSend);
+         //clients[i].sendUTF(messageToSend);
+         //console.log('int the loop2');
+    //}
+
+   res.send('ok');
 });
  
 // Optional. You will see this name in eg. 'ps' or 'top' command
@@ -66,6 +135,11 @@ wsServer.on('request', function(request) {
     // we need to know client index to remove them on 'close' event
     var index = clients.push(connection) - 1;
     console.log((new Date()) + ' Connection accepted.');
+
+    // send back chat history
+    for (var i=0; i < history.length; i++) {
+        connection.sendUTF(history[i]);
+    }
  
     // user sent some message
     connection.on('message', function(message) {
