@@ -1196,7 +1196,7 @@
 
                     console.log("Tonal Values for:" + data["message_text"])
                     console.log(JSON.stringify(tonalValues))
-                    if (tonalValues.max() > 0.85)
+                    if (tonalValues.max() > 0.85 || data['message_text'].toLowerCase().indexOf("love") > -1)
                         important.push(data);
                 }
 
@@ -1220,7 +1220,7 @@
 
                     console.log("Tonal Values for:" + data["message_text"])
                     console.log(JSON.stringify(tonalValues))
-                    if (tonalValues.max() <= 0.85)
+                    if (tonalValues.max() <= 0.85 && data['message_text'].toLowerCase().indexOf("love") == -1)
                         unimportant.push(data);
 
                 }
