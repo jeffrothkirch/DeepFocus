@@ -7,12 +7,12 @@ var app = express();
 //app.use(bodyParser.urlencoded({ extended: true }));
 
 //use this for any folders that the HTML will consume
-app.use(express.static(path.join(__dirname, 'FrontEnd')));
+app.use(express.static(path.join(__dirname, 'what')));
 app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 
 
 app.get('/', function(req,res) {
-  var file = __dirname + "/FrontEnd/index.html";
+  var file = __dirname + "/what/index.html";
   console.log(file);
   res.sendFile(file);
 

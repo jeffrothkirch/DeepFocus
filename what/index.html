@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Deep Focus (3)</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/creative.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+    </head>
+
+    <body id="page-top">
+
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for bettstarer mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="#page-top">Hello, Quan Zhou</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a class="page-scroll" href="#summary">Summary</a>
+                        </li>
+                        <li>
+                            <a class="page-scroll" href="#messages">messages</a>
+                        </li>
+                        
+                        <li>
+                            <!-- <a class="page-scroll" href="#contact">Contact</a> -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+        <header>
+            <div class="header-content">
+                <div class="header-content-inner">
+                    <h1>Deep Focus</h1>
+                    <h2>Keep Crushing it.</h2>
+                    <hr>
+                    <h4 style="color: rgba(255, 255, 255, 0.75)">Total Messages: 38</h4>
+                    <h4 style="color: rgba(255, 255, 255, 0.75)"> Important Messages: 3 </h4>
+                    <h5 style="color: rgba(255, 255, 255, 0.75)"> Last Updated: <span id="time-now">May 5th 8:19 pm </span></h5>
+                    <a href="#summary" class="btn btn-primary btn-xl page-scroll">Summary</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="bg-primary" id="summary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <h2 class="section-heading dark">Important Messages</h2>
+                        <hr class="dark">
+                        <p class="dark">Here's the summary of who have contacted you</p>
+                        
+                        <div id="summary-items">
+                            <!-- <div class='row'>
+
+                                <div class='col-sm-4'>
+                                    <h4 class="dark" style="margin-bottom: 0px;"> Jeff Rothkirch </h4>
+                                    <img src="img/jeff.jpg" class="img-responsive img-thumbnail summary-thumbnail" alt="Cinque Terre">
+                                </div>
+
+                                <div class='col-sm-4'>
+                                    <div class='summary-chart'>
+                                        <h4>Summary </h4>
+                                        <canvas id="canvas-anonymous_1"></canvas>
+                                    </div>
+                                </div>
+
+                                <div class='col-sm-4' >
+                                    <h4> Contacts </h4>
+                                    <div class='summary-contacts'>
+                                        <p> Messages: 3 </p>
+                                        <p> Voicemail: 0 </p>
+                                        <p> Email: 0</p>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <!-- <div class='row'>
+
+                                <div class='col-sm-4'>
+                                    <h4 class="dark" style="margin-bottom: 0px;"> Julia Hu </h4>
+                                    <img src="img/julia.jpg" class="img-responsive img-thumbnail summary-thumbnail" alt="Cinque Terre">
+                                </div>
+
+                                <div class='col-sm-4'>
+                                    <div class='summary-chart'>
+                                        <h4>Summary </h4>
+                                        <canvas id="canvas-julia"></canvas>
+                                    </div>
+                                </div>
+
+                                <div class='col-sm-4' >
+                                    <h4> Contacts </h4>
+                                    <div class='summary-contacts'>
+                                        <p> Messages: 3 </p>
+                                        <p> Voicemail: 1 </p>
+                                        <p> Email: 0</p>
+                                    </div>
+                                </div>
+                            </div> -->
+
+
+
+                            <!-- <div class='row'>
+
+                                <div class='col-sm-4'>
+                                    <h4 class="dark" style="margin-bottom: 0px;"> 631-293-1920 </h4>
+                                    <img src="img/anonymous/red03.png" class="img-responsive img-thumbnail summary-thumbnail" alt="Cinque Terre">
+                                </div>
+
+                                <div class='col-sm-4'>
+                                    <div class='summary-chart'>
+                                        <h4>Summary </h4>
+                                        <canvas id="canvas-anonymous_1"></canvas>
+                                    </div>
+                                </div>
+
+                                <div class='col-sm-4' >
+                                    <h4> Contacts </h4>
+                                    <div class='summary-contacts'>
+                                        <p> Messages: 3 </p>
+                                        <p> Voicemail: 1 </p>
+                                        <p> Email: 0</p>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-default btn-xl">Back to Home</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="messages" class="bg-wood">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Messages</h2>
+                        <hr class="primary">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-comment wow bounceIn text-primary"></i>
+                            <h3>Text Message</h3>
+                            <div class="row">
+                                <div class="col-xs-4">5/7 10:32 AM</div>
+                                <div class="col-xs-8" style="text-align: left;">
+                                    Rothkirch: Hey, checkout this blue bike
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    8:42AM
+                                </div>
+                                <div class="col-xs-8" style="text-align: left;">
+                                    Rothkirch: Why aren't you replying to my messages?
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-phone wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                            <h3>Voicemail</h3>
+
+                            <div class="row">
+                                <div class="col-xs-4">5/7 3:32 PM</div>
+                                <div class="col-xs-8" style="text-align: left;">
+                                    Julia: Hi Sweetie! I got us our reservation at Tarintino.
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-envelope-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                            <h3>Email</h3>
+
+
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    10:42AM
+                                </div>
+                                <div class="col-xs-8" style="text-align: left;">
+                                    From: TechCrunch
+                                    Subject: Sign up for Tech Crunch
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    5/7 10:55AM
+                                </div>
+                                <div class="col-xs-8" style="text-align: left;">
+                                    From: Google
+                                    Subject: Congratulations on your job offer!
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <aside class="bg-dark">
+            <div class="container text-center">
+                <div class="call-to-action">
+                    <h2>Keep Crushing it!</h2>
+                    <!-- <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a> -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- <section class="no-padding" id="portfolio">
+            <div class="container-fluid">
+                <div class="row no-gutter">
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="#" class="portfolio-box">
+                            <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
+                                    </div>
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="#" class="portfolio-box">
+                            <img src="img/portfolio/2.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
+                                    </div>
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="#" class="portfolio-box">
+                            <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
+                                    </div>
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="#" class="portfolio-box">
+                            <img src="img/portfolio/4.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
+                                    </div>
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="#" class="portfolio-box">
+                            <img src="img/portfolio/5.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
+                                    </div>
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a href="#" class="portfolio-box">
+                            <img src="img/portfolio/6.jpg" class="img-responsive" alt="">
+                            <div class="portfolio-box-caption">
+                                <div class="portfolio-box-caption-content">
+                                    <div class="project-category text-faded">
+                                        Category
+                                    </div>
+                                    <div class="project-name">
+                                        Project Name
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <h2 class="section-heading">Let's Get In Touch!</h2>
+                        <hr class="primary">
+                        <p>Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                    </div>
+                    <div class="col-lg-4 col-lg-offset-2 text-center">
+                        <i class="fa fa-phone fa-3x wow bounceIn"></i>
+                        <p>123-456-6789</p>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                        <p><a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="js/jquery.easing.min.js"></script>
+        <script src="js/jquery.fittext.js"></script>
+        <script src="js/wow.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="js/creative.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="js/Chart.js"></script>
+        <script src="js/Chart.bundle.js"></script>
+        <script>
+        // First, checks if it isn't implemented yet.
+        if (!String.prototype.format) {
+          String.prototype.format = function() {
+            var args = arguments;
+            return this.replace(/{(\d+)}/g, function(match, number) { 
+              return typeof args[number] != 'undefined'
+                ? args[number]
+                : match
+              ;
+            });
+          };
+        }
+
+        Array.prototype.sum = function () {
+            var total = 0;
+            for (var i = 0; i < this.length; i++) {
+                total += this[i];
+            }
+            return total;
+        };
+
+        Array.prototype.mean = function () {
+
+            if (this.length == 0)
+                return NaN;
+
+            total = this.sum();
+            return total/this.length;
+        };
+
+        Array.prototype.max = function() {
+            return Math.max.apply(null, this);
+        };
+
+
+
+
+        // Dynamicall create summary
+        var dataset = [{  
+           "message_type":"sms",
+           "time" : "5/8/2016 8:20 AM",
+           "message_text" : "Hello World",
+           "message_number" : "631-682-3553", // missing
+           "message_tone":{   "document_tone":{  
+              "tone_categories":[  
+                 {  
+                    "tones":[  
+                       {  
+                          "score":0.25482,
+                          "tone_id":"anger",
+                          "tone_name":"Anger"
+                       },
+                       {  
+                          "score":0.345816,
+                          "tone_id":"disgust",
+                          "tone_name":"Disgust"
+                       },
+                       {  
+                          "score":0.121116,
+                          "tone_id":"fear",
+                          "tone_name":"Fear"
+                       },
+                       {  
+                          "score":0.078903,
+                          "tone_id":"joy",
+                          "tone_name":"Joy"
+                       },
+                       {  
+                          "score":0.199345,
+                          "tone_id":"sadness",
+                          "tone_name":"Sadness"
+                       }
+                    ],
+                    "category_id":"emotion_tone",
+                    "category_name":"Emotion Tone"
+                 },
+                 {  
+                    "tones":[  
+                       {  
+                          "score":0.999,
+                          "tone_id":"analytical",
+                          "tone_name":"Analytical"
+                       },
+                       {  
+                          "score":0.999,
+                          "tone_id":"confident",
+                          "tone_name":"Confident"
+                       },
+                       {  
+                          "score":0.694,
+                          "tone_id":"tentative",
+                          "tone_name":"Tentative"
+                       }
+                    ],
+                    "category_id":"writing_tone",
+                    "category_name":"Writing Tone"
+                 },
+                 {  
+                    "tones":[  
+                       {  
+                          "score":0.271,
+                          "tone_id":"openness_big5",
+                          "tone_name":"Openness"
+                       },
+                       {  
+                          "score":0.11,
+                          "tone_id":"conscientiousness_big5",
+                          "tone_name":"Conscientiousness"
+                       },
+                       {  
+                          "score":0.844,
+                          "tone_id":"extraversion_big5",
+                          "tone_name":"Extraversion"
+                       },
+                       {  
+                          "score":0.257,
+                          "tone_id":"agreeableness_big5",
+                          "tone_name":"Agreeableness"
+                       },
+                       {  
+                          "score":0.497,
+                          "tone_id":"neuroticism_big5",
+                          "tone_name":"Emotional Range"
+                       }
+                    ],
+                    "category_id":"social_tone",
+                    "category_name":"Social Tone"
+                 }
+              ]
+           }
+        }
+    },
+    {  
+           "message_type":"sms",
+           "time" : "5/8/2016 9:30 AM",
+           "message_text" : "Do you want to build a snowman?",
+           "message_number" : "631-682-3553", // missing
+           "message_tone":{   "document_tone":{  
+              "tone_categories":[  
+                 {  
+                    "tones":[  
+                       {  
+                          "score":0.000,
+                          "tone_id":"anger",
+                          "tone_name":"Anger"
+                       },
+                       {  
+                          "score":0.345816,
+                          "tone_id":"disgust",
+                          "tone_name":"Disgust"
+                       },
+                       {  
+                          "score":0.121116,
+                          "tone_id":"fear",
+                          "tone_name":"Fear"
+                       },
+                       {  
+                          "score":0.078903,
+                          "tone_id":"joy",
+                          "tone_name":"Joy"
+                       },
+                       {  
+                          "score":0.199345,
+                          "tone_id":"sadness",
+                          "tone_name":"Sadness"
+                       }
+                    ],
+                    "category_id":"emotion_tone",
+                    "category_name":"Emotion Tone"
+                 },
+                 {  
+                    "tones":[  
+                       {  
+                          "score":0.999,
+                          "tone_id":"analytical",
+                          "tone_name":"Analytical"
+                       },
+                       {  
+                          "score":0.999,
+                          "tone_id":"confident",
+                          "tone_name":"Confident"
+                       },
+                       {  
+                          "score":0.694,
+                          "tone_id":"tentative",
+                          "tone_name":"Tentative"
+                       }
+                    ],
+                    "category_id":"writing_tone",
+                    "category_name":"Writing Tone"
+                 },
+                 {  
+                    "tones":[  
+                       {  
+                          "score":0.271,
+                          "tone_id":"openness_big5",
+                          "tone_name":"Openness"
+                       },
+                       {  
+                          "score":0.11,
+                          "tone_id":"conscientiousness_big5",
+                          "tone_name":"Conscientiousness"
+                       },
+                       {  
+                          "score":0.844,
+                          "tone_id":"extraversion_big5",
+                          "tone_name":"Extraversion"
+                       },
+                       {  
+                          "score":0.257,
+                          "tone_id":"agreeableness_big5",
+                          "tone_name":"Agreeableness"
+                       },
+                       {  
+                          "score":0.497,
+                          "tone_id":"neuroticism_big5",
+                          "tone_name":"Emotional Range"
+                       }
+                    ],
+                    "category_id":"social_tone",
+                    "category_name":"Social Tone"
+                 }
+              ]
+           }
+        }
+    },
+    {  
+           "message_type":"sms",
+           "message_number" : "917-999-8417", // missing
+            "time" : "5/8/2016 1:20 PM",
+           "message_text" : "I got the reservation at Morgans again.",
+           "message_tone":{"document_tone":{  
+              "tone_categories":[  
+                 {  
+                    "tones":[  
+                       {  
+                          "score":0.25482,
+                          "tone_id":"anger",
+                          "tone_name":"Anger"
+                       },
+                       {  
+                          "score":0.345816,
+                          "tone_id":"disgust",
+                          "tone_name":"Disgust"
+                       },
+                       {  
+                          "score":0.121116,
+                          "tone_id":"fear",
+                          "tone_name":"Fear"
+                       },
+                       {  
+                          "score":0.078903,
+                          "tone_id":"joy",
+                          "tone_name":"Joy"
+                       },
+                       {  
+                          "score":0.199345,
+                          "tone_id":"sadness",
+                          "tone_name":"Sadness"
+                       }
+                    ],
+                    "category_id":"emotion_tone",
+                    "category_name":"Emotion Tone"
+                 },
+                 {  
+                    "tones":[  
+                       {  
+                          "score":0.999,
+                          "tone_id":"analytical",
+                          "tone_name":"Analytical"
+                       },
+                       {  
+                          "score":0.999,
+                          "tone_id":"confident",
+                          "tone_name":"Confident"
+                       },
+                       {  
+                          "score":0.694,
+                          "tone_id":"tentative",
+                          "tone_name":"Tentative"
+                       }
+                    ],
+                    "category_id":"writing_tone",
+                    "category_name":"Writing Tone"
+                 },
+                 {  
+                    "tones":[  
+                       {  
+                          "score":0.271,
+                          "tone_id":"openness_big5",
+                          "tone_name":"Openness"
+                       },
+                       {  
+                          "score":0.11,
+                          "tone_id":"conscientiousness_big5",
+                          "tone_name":"Conscientiousness"
+                       },
+                       {  
+                          "score":0.844,
+                          "tone_id":"extraversion_big5",
+                          "tone_name":"Extraversion"
+                       },
+                       {  
+                          "score":0.257,
+                          "tone_id":"agreeableness_big5",
+                          "tone_name":"Agreeableness"
+                       },
+                       {  
+                          "score":0.497,
+                          "tone_id":"neuroticism_big5",
+                          "tone_name":"Emotional Range"
+                       }
+                    ],
+                    "category_id":"social_tone",
+                    "category_name":"Social Tone"
+                 }
+              ]
+           }
+        }
+    }, 
+
+     {  
+
+           "message_type":"sms",
+           "message_number" : "917-999-8417", // missing
+            "time" : "5/8/2016 3:30 PM",
+           "message_text" : "I lost my wallet",
+           "message_number" : "291-923-1207", // missing
+           "message_tone":{"document_tone":{  
+              "tone_categories":[  
+                 {  
+                    "tones":[  
+                       {  
+                          "score":0.25482,
+                          "tone_id":"anger",
+                          "tone_name":"Anger"
+                       },
+                       {  
+                          "score":0.345816,
+                          "tone_id":"disgust",
+                          "tone_name":"Disgust"
+                       },
+                       {  
+                          "score":0.121116,
+                          "tone_id":"fear",
+                          "tone_name":"Fear"
+                       },
+                       {  
+                          "score":0.078903,
+                          "tone_id":"joy",
+                          "tone_name":"Joy"
+                       },
+                       {  
+                          "score":0.199345,
+                          "tone_id":"sadness",
+                          "tone_name":"Sadness"
+                       }
+                    ],
+                    "category_id":"emotion_tone",
+                    "category_name":"Emotion Tone"
+                 },
+                 {  
+                    "tones":[  
+                       {  
+                          "score":0.999,
+                          "tone_id":"analytical",
+                          "tone_name":"Analytical"
+                       },
+                       {  
+                          "score":0.999,
+                          "tone_id":"confident",
+                          "tone_name":"Confident"
+                       },
+                       {  
+                          "score":0.694,
+                          "tone_id":"tentative",
+                          "tone_name":"Tentative"
+                       }
+                    ],
+                    "category_id":"writing_tone",
+                    "category_name":"Writing Tone"
+                 },
+                 {  
+                    "tones":[  
+                       {  
+                          "score":0.271,
+                          "tone_id":"openness_big5",
+                          "tone_name":"Openness"
+                       },
+                       {  
+                          "score":0.11,
+                          "tone_id":"conscientiousness_big5",
+                          "tone_name":"Conscientiousness"
+                       },
+                       {  
+                          "score":0.844,
+                          "tone_id":"extraversion_big5",
+                          "tone_name":"Extraversion"
+                       },
+                       {  
+                          "score":0.257,
+                          "tone_id":"agreeableness_big5",
+                          "tone_name":"Agreeableness"
+                       },
+                       {  
+                          "score":0.497,
+                          "tone_id":"neuroticism_big5",
+                          "tone_name":"Emotional Range"
+                       }
+                    ],
+                    "category_id":"social_tone",
+                    "category_name":"Social Tone"
+                 }
+              ]
+           }
+        }
+    }
+
+
+    ]
+
+        
+        var get_name = function(number) {
+            var mapping = {
+                '917-999-8417' : 'Sonya Hua',
+                '631-682-3553' : 'Quan Zhou',
+            }
+
+            if (mapping[number])
+                return mapping[number]
+            return number
+        }
+
+
+        var get_picture_mapping = function(number) {
+            var root_dir = '/img';
+            var anonymous_dir = '/anonymous'
+            var mapping = {
+                '917-999-8417' : 'sonya.jpg',
+                '631-682-3553' : 'quan.jpg',
+            }
+
+// 'blue01.png', 'blue03.png', 'blue05.png', 'blue02.png', 'blue04.png', 
+            var anonymous = [ 'green02.png', 'green04.png', 'red00.png', 'red02.png', 'red05.png','green01.png', 'green03.png', 'green05.png', 'red01.png', 'red03.png', 'red06.png'];
+
+            if (mapping[number])
+                return root_dir + '/' + mapping[number]
+            return root_dir + anonymous_dir + '/' +  anonymous[Math.floor(Math.random() * anonymous.length)];
+        }
+
+        var get_element_id = function(number) {
+            return number.replace(/ /g, "");
+        }
+
+        var cache = {};
+        var update_global_cache = function(data) {
+            var id = get_element_id(data['message_number']);
+            
+            var obj = 
+            {   
+                "message_number" : data['message_number'],
+                "message" : data["message_text"],
+                "time" : data['time'],
+                "message_type" : data["message_type"],
+                "message_tone" : data["message_tone"],
+            }
+
+            if (!cache[id]) {
+                cache[id] = [obj]
+                obj['image_url'] = get_picture_mapping(id);
+                return;
+            }
+            cache[id].push(obj);
+        }
+
+        var create_summary_row = function(data) {
+            var id = get_element_id(data['message_number']);
+            var image_url = data['image_url'];
+            var name = get_name(id);
+
+            var node = document.createElement('div');
+
+            node.className = 'row'
+
+            node.innerHTML = "\
+                                <div class='col-sm-4'> \
+                                    <h4 class='dark' style='margin-bottom: 0px;'> {1} </h4> \
+                                    <img src='{0}' class='img-responsive img-thumbnail summary-thumbnail'  alt='Cinque Terre'> \
+                                </div>\
+\
+                                <div class='col-sm-4'>\
+                                    <div class='summary-chart'>\
+                                        <h4>Summary </h4>\
+                                        <canvas id='{2}'></canvas>\
+                                    </div>\
+                                </div>\
+\
+                                <div class='col-sm-4' >\
+                                    <h4> Contacts </h4>\
+                                    <div class='summary-contacts'>\
+                                        <p> Messages: {3} </p>\
+                                    </div>\
+                                </div>".format(image_url, name, id,cache[id].length)
+            return node;
+        }
+
+            // For loading the graphs
+            window.onload = function() {
+                for (var i=0; i < dataset.length; i++) {
+                    var data = dataset[i];
+                    update_global_cache(data);
+                }
+                clear_summaries();
+                draw_summaries();
+                set_latest_time();
+            };
+
+            var draw_summaries = function() {
+                var ids = Object.keys(cache);
+                for (var i=0; i < ids.length; i++){
+                    var data = cache[ids[i]][0];
+                    var summary_node = document.getElementById('summary-items');
+                    var node = create_summary_row(data);
+                    
+                    summary_node.appendChild(node)
+                  }
+
+                
+                for (var i=0; i < ids.length; i++) {
+                    var id = ids[i];
+                    generate_graphs(id);
+                }
+            }
+
+            var clear_summaries = function() {
+                // Get the <ul> element with id="myList"
+                var list = document.getElementById("summary-items");
+
+                // As long as <ul> has a child node, remove it
+                while (list.hasChildNodes()) {   
+                    list.removeChild(list.firstChild);
+                }
+            }
+
+            var generate_graphs = function(id){
+                // message_number, image location, summary infomation
+                var dataset = cache[id];
+                var converted = digest_data(dataset);
+                new Chart(document.getElementById(id), 
+                    generate_radar(converted['anger'], converted['disgust'], converted['fear'], converted['joy'], converted['sadness']));
+            }
+
+            var digest_data = function(dataset) {
+                var analysis = {
+                    anger : [],
+                    disgust : [],
+                    fear : [],
+                    joy : [],
+                    sadness : []
+                }
+
+                for (var i=0; i< dataset.length; i++){
+                    var data = dataset[i];
+
+                    if (!data["message_tone"]["document_tone"])
+                        var emotions = JSON.parse(data["message_tone"])["document_tone"]["tone_categories"][0]["tones"];
+                    else
+                        var emotions = data["message_tone"]["document_tone"]["tone_categories"][0]["tones"];
+
+                    analysis['anger'].push($.grep(emotions, function(e){ return e.tone_id == "anger"; })[0]['score']);
+                    analysis['disgust'].push($.grep(emotions, function(e){ return e.tone_id == "disgust"; })[0]['score']);
+                    analysis['fear'].push($.grep(emotions, function(e){ return e.tone_id == "fear"; })[0]['score']);
+                    analysis['joy'].push($.grep(emotions, function(e){ return e.tone_id == "joy"; })[0]['score']);
+                    analysis['sadness'].push($.grep(emotions, function(e){ return e.tone_id == "sadness"; })[0]['score']);
+                }
+
+                var ans = {
+                    anger  :  analysis['anger'].mean(),
+                    disgust  : analysis['disgust'].mean(),
+                    fear  : analysis['fear'].mean(),
+                    joy  : analysis['joy'].mean(),
+                    sadness  : analysis['sadness'].mean(),
+                };
+
+                return ans;
+            }
+
+            var randomScalingFactor = function() {
+                return Math.round(Math.random() * 100);
+            };
+            var randomColorFactor = function() {
+                return Math.round(Math.random() * 255);
+            };
+            var randomColor = function(opacity) {
+                return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')';
+            };
+
+            var fetchMaxTimeFromCache = function() {
+                if (cache.length == 0)
+                    return null;
+
+                var keys = Object.keys(cache);
+                var times = [];
+
+                for (var i=0; i < keys.length; i++){
+                    var key = keys[i];
+                    var messages = cache[key];
+
+                    for (var j=0; j < messages.length; j++) {
+                        var time_s = messages[j]['time'];
+                        times.push(time_s);
+                    }
+                }
+
+                var time_parsed = [];
+                for (var i=0; i < times.length; i++) {
+                    var time_d = new Date(cache[keys[0]][0]['time'])
+                    time_parsed.push(time_d);
+                }
+
+                time_parsed.sort(function (a,b) {
+                    if(a > b) { return -1; }
+                    if(a < b) { return 1; }    
+                    return 0;
+                });
+
+                return new Date(times[0]);
+            }
+
+            var set_latest_time = function() {
+                var time = fetchMaxTimeFromCache();
+                var time_s = time.toLocaleDateString() + " " + time.toLocaleTimeString()
+                var node = document.getElementById('time-now');
+
+                node.innerText = time_s;
+            }
+
+            var generate_radar = function(anger, disgust, fear, joy, sadness) {
+                // var anger = 
+
+
+                var config = {
+                    type: 'radar',
+                    data: {
+                        labels: ["Anger", "Disgust", "Fear", "Joy", "Sadness"],
+                        datasets: [{
+                            backgroundColor: "rgba(0,0,0,0.4)",
+                            pointBackgroundColor: "rgba(0,0,0,1)",
+                            data: [anger, disgust, fear, joy, sadness]
+                        }]
+                    },
+                    options: {
+                        title: {
+                            display: false,
+                            fontColor: '#000',
+                            fontFamily: 'Helvetica Neue',
+                            defaultFontStyle : 12,
+                            text: 'Emotion Summary'
+                        },
+                        scaleShowLabels : false,
+                        legend: {
+                            display: false,
+                            position: 'top',
+                        },
+                        scale: {
+                          reverse: false,
+                          ticks: {
+                            beginAtZero: true,
+                            display: false,
+                            }
+                        }
+                    }
+                };
+                return config;
+            }
+
+        var ws = new WebSocket("ws://52.2.62.198:1337");       
+        $( document ).ready(function() {    
+         ws.onopen = function()
+         {
+            
+        };
+
+      ws.onmessage = function (evt) 
+      { 
+          var data = JSON.parse(evt.data);
+           var id = get_element_id(data['message_number']);
+           var isNew = !cache[id];
+           update_global_cache(data);
+           clear_summaries();
+           draw_summaries();
+           set_latest_time();
+          //do something with the data
+      };
+
+      ws.onclose = function()
+      { 
+          // websocket is closed.
+      };      
+  });
+
+        var PrintObjectAsHTML = function(data){
+            fake_data = {"hello" : "world"};
+            console.log(fake_data);
+        }
+
+    </script>
+
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('now').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+
+</body>
+
+</html>
